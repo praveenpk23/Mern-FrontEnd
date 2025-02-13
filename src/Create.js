@@ -130,7 +130,6 @@ const CreateUser = () => {
   return (
     <div className="container">
       <div className="form-container">
-        <h2>{isEditing ? 'Update User' : 'Create User'}</h2>
         {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
         <form onSubmit={isEditing ? handleUpdate : handleSubmit}>
@@ -165,6 +164,8 @@ const CreateUser = () => {
             {isEditing ? 'Update User' : 'Create User'}
           </button>
         </form>
+        <br />
+        <hr />
       </div>
       <div className="users-container">
         <h1>All Users</h1>

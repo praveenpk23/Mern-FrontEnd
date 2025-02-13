@@ -1,32 +1,58 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 20px auto;
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .form-container, .users-container {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 h2, h1 {
   text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
 }
 
 .form-control {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
+  padding: 12px 25px;
+  margin-top: 15px;
   cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary {
@@ -35,10 +61,18 @@ h2, h1 {
   border: none;
 }
 
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
 .btn-danger {
   background-color: #dc3545;
   color: white;
   border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
 }
 
 .btn-secondary {
@@ -47,11 +81,42 @@ h2, h1 {
   border: none;
 }
 
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
 .user-item {
   border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease;
+}
+
+.user-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-item p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.user-item p strong {
+  color: #333;
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.success {
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {
@@ -61,10 +126,11 @@ h2, h1 {
 
   .btn {
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 }
 
 ul {
-    list-style-type: none;
-  }
+  list-style-type: none;
+  padding: 0;
+}
