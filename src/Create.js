@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Create.css'; // Import the CSS file
 
 const CreateUser = () => {
   const [name, setName] = useState('');
@@ -127,8 +128,8 @@ const CreateUser = () => {
   };
 
   return (
-    <div>
-      <div className="container">
+    <div className="container">
+      <div className="form-container">
         <h2>{isEditing ? 'Update User' : 'Create User'}</h2>
         {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
@@ -164,21 +165,19 @@ const CreateUser = () => {
             {isEditing ? 'Update User' : 'Create User'}
           </button>
         </form>
-        <br />
-        <hr />
       </div>
-      <div>
+      <div className="users-container">
         <h1>All Users</h1>
         <ul>
           {users.map(user => (
-            <li key={user._id}>
-              <p>Name: {user.name}</p>
-              <p>Email: {user.email}</p>
-              <p>Age: {user.age}</p>
-              <p>Created At: {new Date(user.createdAt).toLocaleString()}</p>
-              <p>Updated At: {new Date(user.updatedAt).toLocaleString()}</p>
-              <button onClick={() => deleteUser(user._id)}>Delete</button>
-              <button onClick={() => startEditing(user)}>Update</button>
+            <li key={user._id} className="user-item">
+              <p><strong>Name:</strong> {user.name}</p>
+              <p><strong>Email:</strong> {user.email}</p>
+              <p><strong>Age:</strong> {user.age}</p>
+              <p><strong>Created At:</strong> {new Date(user.createdAt).toLocaleString()}</p>
+              <p><strong>Updated At:</strong> {new Date(user.updatedAt).toLocaleString()}</p>
+              <button onClick={() => deleteUser(user._id)} className="btn btn-danger">Delete</button>
+              <button onClick={() => startEditing(user)} className="btn btn-secondary">Update</button>
             </li>
           ))}
         </ul>
